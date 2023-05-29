@@ -469,6 +469,10 @@ button:hover {
 .experiences-item:hover p {
     color: #4a4a4a;
 }
+.experiences-item:hover li {
+    color: #4a4a4a;
+}
+
 
 .experiences-item .service-icon {
     width: 30px;
