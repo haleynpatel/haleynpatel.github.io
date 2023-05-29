@@ -142,6 +142,41 @@ html {
     text-align: center;
 }
 
+.menu .shadow {
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+    position: relative;
+    cursor: pointer;
+}
+
+.menu .shadow::after{
+    content: "";
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -20px;
+    height: 7px;
+    width: 50px;
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+    opacity: 0;
+    transition: all 0.6s ease;
+}
+
+.menu .shadow:hover .image{
+
+    transform: translateY(-5px);
+    background: #e1e1e1;
+    border-radius: 50%;
+    border: 1px solid var(--tealAccent);
+}
+.menu .shadow:hover::after{
+    opacity: 1;
+}
 .menu .author-content {
     margin: 40px 0px 60px 0px;
 }
