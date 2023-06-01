@@ -45,7 +45,7 @@
                 <li><a href="#section1">About Me</a></li>
                 <li><a href="#section2">Projects</a></li>
                 <li><a href="#section3">Experience</a></li>
-                <li><a href="#">Resume</a></li>
+                <li class="resume-button"><a href="#" data-resume-link="https://drive.google.com/file/d/1aStS45Qy0EKBRGK9FfQHCJHTJPFULD6Z/view?usp=sharing">Resume</a></li>
                 <li><a href="#section4">Contact Me</a></li>
               </ul>
             </nav>
@@ -316,9 +316,17 @@
       };
 
       $(".main-menu").on("click", "a", function(e) {
-        e.preventDefault();
-        showSection($(this).attr("href"), true);
-      });
+  e.preventDefault();
+  var $clickedItem = $(this);
+  var isResumeButton = $clickedItem.parent().hasClass("resume-button");
+  
+  if (isResumeButton) {
+    var resumeLink = $clickedItem.data("resume-link");
+    window.open(resumeLink, "_blank");
+  } else {
+    showSection($clickedItem.attr("href"), true);
+  }
+});
 
       $(window).scroll(function() {
         checkSection();
